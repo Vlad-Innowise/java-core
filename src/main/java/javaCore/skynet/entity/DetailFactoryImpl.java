@@ -139,7 +139,7 @@ public class DetailFactoryImpl implements Factory {
             detailNum++;
             log.info("Detail Factory: Detail [{}] produced: {}", detailNum, detail);
             details.put(detail);
-            log.debug("Detail Factory: Put detail into queue");
+            log.debug("Detail Factory: Put detail [{}] into queue", detail.id());
         }
 
         log.info("Detail Factory: Finished producing details");
