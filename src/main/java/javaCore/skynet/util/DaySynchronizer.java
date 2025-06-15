@@ -90,10 +90,14 @@ public class DaySynchronizer implements DaySyncronizer {
                 startNewDay.await();
 
                 log.info("Day Syncronizer: Current day [{}] is finished", currentDay);
-                currentDay++;
 
-                if (i == (days - 1)) {
+                if (!isLastDay(i)) {
+                    currentDay++;
+                }
+
+                if (isLastDay(i)) {
                     simulationIsOver = true;
+                    log.info("Day Syncronizer: Finished simulation at the day [{}]", currentDay);
                     break;
                 }
 
@@ -107,10 +111,12 @@ public class DaySynchronizer implements DaySyncronizer {
                 lock.unlock();
             }
 
-            log.info("Day Syncronizer: Finished simulation at the day [{}]", currentDay);
-
         }
 
+    }
+
+    private boolean isLastDay(int i) {
+        return i == (days - 1);
     }
 
     private void startingSimulation() {
