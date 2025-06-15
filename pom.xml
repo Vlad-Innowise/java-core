@@ -17,6 +17,8 @@
         <maven.surefire.version>3.2.5</maven.surefire.version>
         <junit-jupiter.version>5.13.0</junit-jupiter.version>
         <lombok.version>1.18.38</lombok.version>
+        <logback.version>1.5.18</logback.version>
+        <slf4j-api.version>2.0.17</slf4j-api.version>
     </properties>
 
     <dependencies>
@@ -31,6 +33,17 @@
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
             <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j-api.version}</version>
         </dependency>
     </dependencies>
 
